@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>호버효과</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: inherit;
+      font-weight: inherit;
+      box-sizing: border-box;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    body {
+      line-height: 1;
+      color: #333;
+      text-align: center;
+    }
+
+    section {
+      margin: 20px;
+      width: 400px;
+      height: 400px;
+      display: inline-block;
+      vertical-align: top;
+      /* 인라인이 포함되어 있을 경우에 사용가능, 수직 배치 */
+    }
+
+    section figure {
+      width: 100%;
+      height: 100%;
+    }
+
+    section figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .items01 {
+      position: relative;
+    }
+
+    .items01 .info {
+      opacity: 0;
+      /* 투명도 조절: 0-1 */
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #ffcc00;
+    }
+
+    .items01 .info div {
+      /* 세로축으로 움직일 때 사용하는 방법 */
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+
+    .items01 .info div h4 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .items01 .info div a {
+      width: 120px;
+      padding: 10px 0;
+      background-color: #ff5100;
+      color: #fff;
+      display: block;
+      /* 가로세로 사이즈 조절 가능 */
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    .items01:hover .info {
+      opacity: 1;
+      transition: 1s;
+      top: 20px;
+      left: 20px;
+    }
+
+    .items02 {
+      position: relative;
+    }
+
+    .items02 .info {
+      z-index: -1;
+      /* 앞뒤 위치 변경
+      기본값이 0, 양수, 음수, position이 있을 때만 사용 가능
+      position 값이 없을 경우, 
+      position:relative */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ff5100;
+      color: #fff;
+      text-align: center;
+    }
+
+    .items02 .info div {
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+    }
+
+    .items02 .info div h4 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .items02 .info div a {
+      width: 120px;
+      padding: 10px 0;
+      background-color: #fff;
+      color: #ff5100;
+      display: block;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    .items02:hover figure {
+      transform: translateY(-200px);
+      transition: 1s;
+    }
+
+    .items03 {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .items03 .info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffcc00;
+      text-align: center;
+    }
+
+    .items03 .info div {
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+    }
+
+    .items03 .info div h4 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .items03 .info div a {
+      width: 120px;
+      padding: 10px 0;
+      background-color: #fff;
+      color: #ff5100;
+      display: block;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    .items03 figure {
+      z-index: 99;
+      position: relative;
+    }
+
+    .items03 figure img {
+      transform: scale(0.2);
+      transition: 1s;
+    }
+
+    .items03:hover figure img {
+      transform: scale(2);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="items01">
+    <figure>
+      <img src="img/coffee01.jpg" alt="커피">
+    </figure>
+    <div class="info">
+      <div>
+        <h4>coffee - 1</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dolores, minima facere obcaecati
+          similique fuga placeat, autem laborum suscipit dolorem tempore, magnam fugiat quisquam ipsa nemo totam
+          architecto. Fugiat, repellendus.
+        </p>
+        <a href="#">button</a>
+      </div>
+    </div><!-- .info end -->
+  </section><!-- .items01 end -->
+
+  <section class="items02">
+    <figure>
+      <img src="img/coffee02.jpg" alt="커피">
+    </figure>
+    <div class="info">
+      <div>
+        <h4>coffee - 2</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dolores, minima facere obcaecati
+          similique fuga placeat, autem laborum suscipit dolorem tempore, magnam fugiat quisquam ipsa nemo totam
+          architecto. Fugiat, repellendus.
+        </p>
+        <a href="#">button</a>
+      </div>
+    </div><!-- .info end -->
+  </section><!-- .items02 end -->
+
+  <section class="items03">
+    <figure>
+      <img src="img/coffee03.jpg" alt="커피">
+    </figure>
+    <div class="info">
+      <div>
+        <h4>coffee - 3</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dolores, minima facere obcaecati
+        </p>
+        <a href="#">button</a>
+      </div>
+    </div><!-- .info end -->
+  </section><!-- .items03 end -->
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>텍스트나타나기</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-weight: inherit;
+      font-size: inherit;
+      box-sizing: border-box;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    body {
+      color: #333;
+      /* 검정색은 무거워보이기 때문에 짙은 회색으로 설정 */
+      line-height: 1;
+    }
+
+    section {
+      width: 700px;
+      height: 450px;
+      border: 1px solid #333;
+      margin: 50px auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section figure {
+      width: 100%;
+      height: 100%;
+    }
+
+    section figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section div {
+      position: absolute;
+      left: 0;
+      bottom: -100%;
+      background-color: rgba(185, 217, 255, 0.815);
+      /* padding: 20px; */
+      padding: 20px 40px;
+      /* 20px(상하좌우) */
+      /* 20px(상하) 40px(좌우) */
+      /* 20px(상) 40px(좌우) 60px(하) */
+      /* 20px(상) 30px(우) 40px(하) 50px(좌) */
+      transition: 0.8s;
+    }
+
+    section:hover div {
+      bottom: 0;
+    }
+
+    section div h4 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    section div p {}
+  </style>
+</head>
+
+<body>
+  <section>
+    <figure>
+      <img src="img/spring08.jpg" alt="봄의 꽃" />
+    </figure>
+    <div>
+      <h4>Spring title</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus consequuntur incidunt distinctio dicta eos
+        possimus modi voluptas neque assumenda beatae! Magnam ipsa est corporis amet, facilis ad laborum doloremque
+        corrupti!
+      </p>
+    </div>
+  </section>
+</body>
+
+</html>
