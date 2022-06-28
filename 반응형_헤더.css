@@ -1,0 +1,146 @@
+@charset "utf-8"; /* 폰트스타일 연결 */
+
+* { margin: 0; padding: 0; font-size: inherit; box-sizing: border-box; } 
+
+ul,
+ol { list-style: none; } 
+
+a { color: inherit; text-decoration: none; } 
+
+body { color: #333; line-height: 1; } 
+
+/* 모바일 해당 영역 없애기 */
+.mobile { display: none; } 
+
+.mobile_gnb { display: none; } 
+
+
+/* header */
+header { width: calc(100% - 60px); position: absolute; top: 30px; left: 50%; transform: translateX(-50%); background-color: #fff; /* color: #fff; */
+ z-index: 99; } 
+
+header div { max-width: 1280px; width: 100%; height: 100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; } 
+
+header div .pc_gnb { height: 100%; } 
+
+header div .pc_gnb>ul { display: flex; /* align-items: center; */ } 
+
+header div .pc_gnb>ul>li>a { display: block; padding: 0 40px; line-height: 100px; font-size: 17px; font-weight: bold; } 
+
+header div .pc_gnb .sub_menu { position: relative; z-index: 1; background-color: rgb(255, 145, 1); color: #fff; text-align: center; padding: 20px 0; display: none; } 
+
+header div .pc_gnb .sub_menu li { line-height: 3; } 
+
+header div .pc_gnb>ul>li:hover .sub_menu { display: block; } 
+
+
+/* main_visual */
+.main_visual { height: 100vh; /* 브라우저의 100%를 차지 */
+ position: relative; } 
+
+.main_visual img { width: 100%; height: 100%; object-fit: cover; } 
+
+.main_visual div { max-width: 1280px; width: 95%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; } 
+
+.main_visual div h2 { font-size: 50px; } 
+
+.main_visual div p { font-size: 20px; margin: 10px 0 30px; } 
+
+.main_visual div a { height: 40px; padding: 0 40px; background-color: rgb(255, 145, 1); border-radius: 20px; display: inline-block; line-height: 38px; } 
+
+
+/* .cont01 */
+.cont01 { margin: 100px 0; } 
+
+.cont01 .cont { max-width: 1280px; width: 95%; margin: 0 auto; /* 가로 정렬 */
+ display: flex; /* 수평 정렬 */
+ justify-content: space-between; /* 자식끼리 수직 정렬(부모가 가진 영역의 가운데로 배치) */
+ align-items: center; /* 자식끼리 공간이 부족하면 밑으로 떨어짐(미리해주면 좋음) */
+ flex-wrap: wrap; } 
+
+.cont01 .cont figure { width: 32%; height: 450px; } 
+
+.cont01 .cont figure img { width: 100%; height: 100%; object-fit: cover; } 
+
+.cont01 .cont div { width: 32%; } 
+
+section h3 { font-size: 40px; } 
+
+.cont01 .cont div p { line-height: 1.2; margin: 20px 0 30px; } 
+
+.cont01 .cont div a { width: 120px; height: 40px; background-color: rgb(255, 145, 1); color: #fff; display: block; line-height: 40px; text-align: center; border-radius: 20px; } 
+
+
+/* .cont02 */
+.cont02 { background-color: rgb(250, 224, 209); padding: 100px 0; text-align: center; } 
+
+.cont02 ul { max-width: 1280px; width: 95%; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 40px; } 
+
+.cont02 ul li { width: calc(100% / 5 - 10px); height: 80px; background: #fff; margin: 5px 0; display: flex; justify-content: center; align-items: center; } 
+
+
+/* footer */
+footer { padding: 50px 0; background-color: #333; color: #fff; text-align: center; letter-spacing: 2px; word-spacing: 4px; } 
+
+
+
+
+/* 반응형 시작 */
+/* 뷰포트 1024px 이하일 때부터 스타일 적용 */
+@media screen and (max-width:1024px) { header { background-color: transparent; } 
+
+ header div { width: 100%; height: 60px; } 
+
+ header div h1 a { color: #fff; font-size: 20px; } 
+
+ header div .pc_gnb { display: none; } 
+
+ .main_visual div { width: 95%; } 
+
+ .mobile { display: block; } 
+
+ .mobile span { position: absolute; left: -999999999px; } 
+
+ .xi-bars { font-size: 24px; color: rgb(255, 145, 1); /* background-color: #333; */
+ width: 40px; height: 40px; text-align: center; line-height: 40px; border: 1px solid #fff; } 
+
+ /* .cont01 */
+ .cont01 .cont figure { width: 49%; } 
+
+ .cont01 .cont div { width: 100%; margin-top: 30px; } 
+
+ /* .cont02 */
+ .cont02 ul li { width: calc(100% / 3 - 10px); } 
+
+ /* 1024px */ } 
+
+
+
+ 
+/* 뷰포트 767px 이하일 때부터 스타일 적용 */
+@media screen and (max-width:767px) { header { width: calc(100% - 20px); top: 10px; } 
+
+ .main_visual div { width: 95%; } 
+
+ .main_visual div h2 { font-size: 30px; } 
+
+ /* .cont01 */
+ .cont01 { margin: 70px 0; } 
+
+ .cont01 .cont figure { width: 100%; height: 280px; margin: 5px 0; } 
+
+ .cont01 .cont div { margin-top: 10px; } 
+
+ section h3 { font-size: 25px; } 
+
+ /* .cont02 */
+ .cont02 { padding: 70px 0; } 
+
+ .cont02 ul { margin-top: 20px; } 
+
+ .cont02 ul li { width: calc(100% / 2 - 5px); } 
+
+ /* footer */
+ footer { padding: 30px 0; font-size: 14px; color: rgba(255, 255, 255, 0.596); } 
+
+ /* 767px */ } 
